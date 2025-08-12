@@ -1,0 +1,15 @@
+router.get('/', async (req, res) => {
+  try {
+    const { from, to, departureDate } = req.query;
+    const query = {};
+
+    if (from) query.from = new RegExp(from, 'i'); // case-insensitive regex match
+    if (to) query.to = new RegExp(to, 'i');
+    if (departureDate) query.departureDate = new Date(departureDate);
+
+    const flights = await Flight.find(query);
+    res.json(flights);
+  } catch (err) {
+    res.status(500).json({ error: 'Server error' });
+  }
+});

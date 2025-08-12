@@ -1,0 +1,189 @@
+/* ===== AUTH PAGE CONTAINER ===== */
+.auth-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #ffffff; /* pure white background to match LandingPage */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+  box-sizing: border-box;
+  color: #222; /* dark text for readability */
+}
+
+/* ===== FORM CARD & CONTAINER ===== */
+.auth-card {
+  background-color: #ffffff;
+  padding: 30px;
+  width: 450px;
+  border-radius: 20px;
+  box-shadow: 0 6px 16px rgba(32, 183, 255, 0.12); /* soft blue shadow */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  box-sizing: border-box;
+  border: 1px solid #cce6ff; /* light blue border for subtle structure */
+}
+
+/* ===== FORM HEADER ===== */
+.auth-card h2 {
+  margin: 0 0 25px 0;
+  color: #20b7ff; /* brand blue */
+  font-weight: 700;
+  font-size: 1.9rem;
+  text-align: center;
+}
+
+/* ===== FLEX COLUMN LABELS ===== */
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.flex-column > label {
+  font-weight: 600;
+  color: #222;
+  font-size: 14px;
+}
+
+/* ===== INPUT WITH SVG CONTAINER ===== */
+.inputForm {
+  border: 1.5px solid #cce6ff; /* light blue border */
+  border-radius: 10px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.3s ease;
+  gap: 10px;
+  background-color: #f3faff; /* very light blue background to soften input look */
+}
+
+/* Border highlight on focus */
+.inputForm:focus-within {
+  border-color: #189cd3; /* darker blue on focus */
+  box-shadow: 0 0 8px 2px rgba(24, 156, 211, 0.35);
+}
+
+/* ===== INPUT FIELD ===== */
+.input {
+  border: none;
+  height: 100%;
+  width: 100%;
+  font-size: 1rem;
+  font-family: inherit;
+  background: transparent;
+  outline: none;
+  color: #222;
+  box-sizing: border-box;
+}
+
+/* Placeholder styling */
+::placeholder {
+  color: #20b7ff88; /* semi-transparent blue placeholder */
+  font-family: inherit;
+  font-weight: 500;
+}
+
+/* ===== FLEX ROW FOR OPTIONS ===== */
+.flex-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #222;
+  user-select: none;
+}
+
+.flex-row > div {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.flex-row input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+/* Clickable "Forgot password" style */
+.span {
+  font-weight: 600;
+  color: #20b7ff;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.2s;
+}
+
+.span:hover {
+  color: #189cd3;
+}
+
+/* ===== BUTTONS ===== */
+.button-submit,
+.auth-btn {
+  margin: 20px 0 10px 0;
+  background-color: #20b7ff; /* brand blue */
+  border: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: 24px; /* pill shape consistent with main CTA */
+  height: 50px;
+  width: 100%;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease;
+  box-shadow: 0 4px 16px rgba(32, 183, 255, 0.3);
+  user-select: none;
+}
+
+.button-submit:hover,
+.auth-btn:hover,
+.button-submit:focus,
+.auth-btn:focus {
+  background-color: #189cd3;
+  box-shadow: 0 6px 24px rgba(24, 156, 211, 0.5);
+  outline: none;
+}
+
+/* ===== PARAGRAPHS ===== */
+.p,
+.switch-link {
+  text-align: center;
+  color: #222;
+  font-size: 14px;
+  margin: 5px 0;
+  user-select: none;
+  font-weight: 600;
+}
+
+.p a,
+.switch-link a {
+  color: #20b7ff;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.p a:hover,
+.switch-link a:hover {
+  color: #189cd3;
+  text-decoration: underline;
+}
+
+/* SVG icons for inputs: tint to soft blue */
+.inputForm svg {
+  flex-shrink: 0;
+  color: #20b7ff;
+  transition: color 0.3s ease;
+}
+
+/* Tint icon on input focus */
+.input:focus + svg,
+.inputForm:focus-within svg {
+  color: #189cd3;
+}

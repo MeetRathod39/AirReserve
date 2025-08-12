@@ -1,0 +1,91 @@
+.confirmation-container {
+  min-height: 100vh;
+  background: linear-gradient(120deg, #d4f1ff 80%, #80cfff 100%);
+  /* Soft light blue shades complementing #20b7ff */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 24px;
+}
+
+.confirmation-card {
+  width: 100%;
+  max-width: 400px;
+  padding: 36px 30px 32px 30px;
+  background: #ffffff;
+  box-shadow: 0 6px 30px rgba(32, 183, 255, 0.25); /* subtle blue shadow */
+  border-radius: 18px;
+  text-align: center;
+}
+
+.confirmation-hero h1 {
+  color: #20b7ff; /* main blue */
+  font-size: 2rem;
+  margin: 18px 0 8px 0;
+}
+
+.confirmation-hero svg {
+  margin-bottom: 8px;
+  stroke: #20b7ff;
+  fill: #20b7ff;
+}
+
+.confirmation-message {
+  color: #111;
+  font-size: 1.05rem;
+}
+
+.flight-details, .payment-details {
+  margin: 20px 0 10px 0;
+  background: #e6f7ff; /* very light blue background */
+  border-radius: 10px;
+  padding: 16px 10px;
+  text-align: left;
+}
+
+.flight-details h2, .payment-details h2 {
+  font-size: 1.1rem;
+  color: #107acc; /* darker blue to complement */
+  margin: 0 0 8px 0;
+}
+
+.confirmation-actions {
+  margin-top: 24px;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+.confirmation-btn {
+  color: #20b7ff;
+  font-weight: 500;
+  padding: 10px 24px;
+  border: none;
+  border-radius: 7px;
+  font-size: 1.08rem;
+  box-shadow: 0 2px 12px rgba(32, 183, 255, 0.5);
+  cursor: pointer;
+  transition: background 0.25s, transform 0.25s;
+}
+
+.confirmation-btn:hover {
+  background: black;
+  color: whitesmoke;
+  transform: translateY(-2px) scale(1.05);
+}
+
+.confirmation-btn.secondary {
+  background: linear-gradient(90deg, #b7dfff 60%, #eaf7ff 100%);
+  color: #23425b;
+}
+
+.confirmation-btn.secondary:hover {
+  background: #cde7ff;
+}
+
+@media (max-width: 600px) {
+  .confirmation-card {
+    padding: 20px 5vw;
+  }
+}

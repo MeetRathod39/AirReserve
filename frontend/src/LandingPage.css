@@ -1,0 +1,381 @@
+:root { --clr: #20b7ff; }
+.landing-page {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+  line-height: 1.6;
+  min-height: 100vh;
+  background: white;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+  background: rgba(255, 255, 255, 0.92);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 10;
+  box-shadow: 0 2px 12px rgba(32, 183, 255, 0.06);
+  overflow: hidden;
+  height: 78px;
+}
+.logo a {
+  font-weight: bold;
+  color: var(--clr);
+  font-size: 1.5em;
+  letter-spacing: 2px;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+}
+.nav-actions { display: flex; gap: 18px; }
+.nav-btn, .logout-btn {
+  width: 6.5em;
+  height: 2.3em;
+  margin: 0.5em 0;
+  background: var(--clr);
+  color: white;
+  border: none;
+  border-radius: 0.625em;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  transition: color 0.5s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+.nav-btn:hover, .logout-btn:hover { color: var(--clr); }
+.nav-btn::after, .logout-btn::after {
+  content: "";
+  background: white;
+  position: absolute;
+  z-index: -1;
+  left: -10%; right: -10%; top: 0; bottom: 0;
+  transform: skewX(-45deg) scale(0, 1);
+  transition: all 0.5s ease;
+}
+.nav-btn:hover::after, .logout-btn:hover::after {
+  transform: skewX(-45deg) scale(1, 1);
+}
+/* Hero Section Styling */
+.hero {
+  background: url('https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?auto=format&fit=crop&w=1500&q=80') center center/cover no-repeat;
+  min-height: 70vh;
+  margin-top: 72px;
+  padding-top: 36px;
+  padding-bottom: 3rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
+  overflow: visible;
+}
+.overlay {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 40px;
+  border-radius: 16px;
+  text-align: center;
+  color: #fff;
+  width: 90%;
+  max-width: 600px;
+  max-height: 75vh;
+  overflow-y: auto;
+  margin-bottom: 2rem;
+}
+.overlay h1 { margin: 0 0 10px; font-size: 2.8em; font-weight: 700; }
+.overlay p { font-size: 1.2em; margin-bottom: 30px; }
+.flight-search-form {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.flight-search-form input[type="text"],
+.flight-search-form input[type="date"],
+.flight-search-form input[type="number"] {
+  flex: 1 1 160px;
+  min-width: 150px;
+  max-width: 220px;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+.flight-search-form button {
+  flex: 0 1 130px;
+  background-color: var(--clr);
+  color: white;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 12px 0;
+  transition: background-color 0.3s ease;
+  border: none;
+  box-sizing: border-box;
+}
+.flight-search-form button:disabled {
+  background-color: #a0cfee;
+  cursor: not-allowed;
+}
+.flight-search-form button:hover:not(:disabled) {
+  background-color: #189cd3;
+}
+/* Search Results & Attractive Card */
+.search-results {
+  max-width: 900px;
+  margin: 0 auto 3rem;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+.search-results h3 {
+  color: whitesmoke;
+  margin-bottom: 0.5rem;
+}
+.search-results p {
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: whitesmoke;
+}
+.flight-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: whitesmoke;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(32, 183, 255, 0.15);
+  padding: 16px 20px;
+  margin-bottom: 16px;
+  transition: box-shadow 0.3s ease;
+}
+.flight-card:hover {
+  box-shadow: 0 8px 24px rgba(32, 183, 255, 0.3);
+}
+.flight-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-width: 75%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: black;
+}
+.flight-route {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--clr);
+}
+.city { padding: 0 6px; }
+.arrow { color: #94a3b8; }
+.flight-date {
+  font-size: 0.95rem;
+  color: black;
+  font-style: italic;
+  font-weight: bolder;
+}
+.flight-airline-price {
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: #475569;
+}
+.airline { margin-right: 12px; color: black; }
+.price { color: #16a34a; font-weight: bolder; }
+.flight-seats {
+  font-size: 0.9rem;
+  color: #059669;
+  font-weight: bolder;
+}
+/* Attractive Book Now Button */
+.book-now-btn {
+  background: #16a34a;
+  border: none;
+  color: white;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 10px;
+  cursor: pointer;
+  min-width: 120px;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 5px 15px rgba(32, 119, 255, 0.4);
+  flex-shrink: 0;
+}
+.book-now-btn:hover {
+  background: var(--clr);
+  box-shadow: 0 8px 20px #16a34a;
+  transform: translateY(-2px);
+  color: #000;
+}
+/* Benefits, CTA, Destinations, Footer, Responsive... */
+.benefits-section {
+  background: #f3faff;
+  padding: 40px 0;
+  text-align: center;
+  margin: 40px 0;
+}
+.benefits-cards {
+  display: flex;
+  gap: 36px;
+  justify-content: center;
+  margin-top: 30px;
+  flex-wrap: wrap;
+  padding: 0 20px;
+}
+.card {
+  background: #fff;
+  padding: 28px 22px;
+  border-radius: 14px;
+  box-shadow: 0 2px 16px rgba(32, 183, 255, 0.1);
+  min-width: 220px;
+  transition: box-shadow 0.2s, transform 0.2s;
+  flex: 1 1 220px;
+  max-width: 280px;
+}
+.card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 6px 24px rgba(32, 183, 255, 0.16);
+}
+.card span { font-size: 2.5em; display: block; margin-bottom: 12px; }
+.card h3 { margin: 12px 0; color: var(--clr); }
+.cta-section {
+  background: var(--clr);
+  color: #fff;
+  text-align: center;
+  padding: 40px 0 30px 0;
+  display: flex; flex-direction: column;
+  justify-content: center; align-items: center;
+  min-height: 200px;
+}
+.cta-section h2 { margin: 0; font-size: 2em; margin-bottom: 10px; }
+.cta-section p { margin-bottom: 22px; font-size: 1.1em; }
+.button {
+  line-height: 1;
+  text-decoration: none;
+  display: inline-flex;
+  border: none;
+  cursor: pointer;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: rgb(86, 212, 250);
+  color: #fff;
+  border-radius: 10rem;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  padding-left: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: background-color 0.3s;
+  font-size: 1.2em;
+  margin-top: 18px;
+}
+.button__icon-wrapper {
+  flex-shrink: 0;
+  width: 25px; height: 25px; position: relative; color: var(--clr);
+  background-color: #fff; border-radius: 50%;
+  display: grid; place-items: center; overflow: hidden;
+}
+.button:hover { background-color: #000; }
+.button:hover .button__icon-wrapper { color: #000; }
+.button__icon-svg--copy {
+  position: absolute;
+  transform: translate(-150%, 150%);
+}
+.button:hover .button__icon-svg:first-child {
+  transition: transform 0.3s ease-in-out;
+  transform: translate(150%, -150%);
+}
+.button:hover .button__icon-svg--copy {
+  transition: transform 0.3s ease-in-out 0.1s;
+  transform: translate(0);
+}
+footer {
+  background: #eeeeee;
+  padding: 18px;
+  text-align: center;
+  color: #888;
+  font-size: 0.95em;
+}
+.destinations-section {
+  padding: 40px 20px;
+  text-align: center;
+  background: #f6f9fc;
+}
+.destinations-section h2 { margin-bottom: 30px; color: #222; font-size: 1.8em; }
+.destinations-grid {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.dest-card {
+  width: 240px;
+  height: 240px;
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.dest-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(32, 183, 255, 0.18);
+}
+.dest-image { width: 100%; height: 100%; object-fit: cover; }
+.dest-name {
+  position: absolute; left: 0; right: 0; bottom: 0; margin: 0; padding: 14px;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 30%, rgba(0,0,0,0) 100%);
+  color: white; font-size: 1.2em; font-weight: bold;
+}
+.dest-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(32, 183, 255, 0.85);
+  display: flex; flex-direction: column; justify-content: center;
+  align-items: center;
+  opacity: 0; transition: opacity 0.25s;
+}
+.dest-card:hover .dest-overlay { opacity: 1; }
+.dest-price { color: white; font-size: 1.5em; font-weight: bold; margin: 0 0 8px 0; }
+.dest-flight { color: white; font-size: 1.1em; margin: 0; }
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 16px 20px;
+    height: 60px;
+  }
+  .nav-actions { gap: 10px; }
+  .nav-btn, .logout-btn {
+    width: auto; height: auto; padding: 6px 14px; font-size: 0.9em; margin: 0;
+  }
+  .hero {
+    min-height: 60vh;
+    margin-top: 60px;
+    padding-top: 24px;
+    padding-bottom: 1.5rem;
+    align-items: flex-start;
+  }
+  .overlay {
+    padding: 20px;
+    width: 90%;
+    max-height: 65vh;
+  }
+  .overlay h1 { font-size: 2em; }
+  .flight-search-form { flex-direction: column; gap: 10px; }
+  .flight-search-form input,
+  .flight-search-form button { width: 100%; max-width: none; }
+  .benefits-cards { flex-direction: column; align-items: center; gap: 20px; }
+  .card { width: 90%; max-width: none; }
+  .search-results { padding: 0 10px; }
+  .book-now-btn { width: 100%; min-width: unset; margin-top: 8px; }
+  .flight-card { flex-direction: column; align-items: flex-start; }
+  .flight-info { max-width: 100%; margin-bottom: 12px; }
+}
